@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ex15a</title>
+    </head>
+
+    <body>
+        <script type="module">
+            import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
+            import {isWeekend as isSatSun} from './WeekendFunction.js'
+
+            const now = dayjs();
+            const FivedaysLater = now.add(5, 'day').format('MMMM DD');
+            console.log(FivedaysLater)
+
+            const OneMonthLater = now.add(1, 'month').format('MMMM DD');
+            console.log(OneMonthLater);
+
+            const OneMonthBefore = now.subtract(1, 'month').format('MMMM DD');
+            console.log(OneMonthBefore);
+
+            const FormatD = now.format('dddd');
+            console.log(FormatD);
+
+
+            isWeekend(now)
+            export function isWeekend(date) {
+                if (date.format('dddd')==="Saturday" || date.format('dddd')==="Sunday"){
+                    console.log("Yes its a weekend")
+                }
+                else{
+                    console.log('no its a weekday');
+                }
+            }
+            
+
+            
+
+        </script>
+    </body>
+</html>
